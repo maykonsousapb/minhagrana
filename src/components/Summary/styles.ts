@@ -30,7 +30,7 @@ export const Container = styled.div`
     }
     &:hover {
       filter: brightness(0.9);
-      font-weight: 700;
+      font-weight: 500;
     }
   }
 `;
