@@ -38,8 +38,7 @@ html{
 body{
   background: var(--background);
   -webkit-font-smoothing: antialiased;
-  color: var(--foreground)
-
+  color: var(--foreground);
 }
 
 body, input, button, textarea {
