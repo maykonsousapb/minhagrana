@@ -4,6 +4,7 @@ import {
   Container,
   OpenModalButton,
   TransactionTypesContainer,
+  TypeRadioButton,
 } from './styles';
 import CloseImg from '../../assets/close.svg';
 import IncomeImg from '../../assets/income.svg';
@@ -11,6 +12,7 @@ import OutcomeImg from '../../assets/outcome.svg';
 
 export const NewTransactionModal = () => {
   const [open, setopen] = useState(false);
+  const [type, setType] = useState('deposit');
   return (
     <>
       <OpenModalButton onClick={() => setopen(true)}>
@@ -34,15 +36,25 @@ export const NewTransactionModal = () => {
           <input type="text" placeholder="Título" />
           <input type="text" placeholder="Valor" />
           <TransactionTypesContainer>
-            <button type="button">
+            <TypeRadioButton
+              type="button"
+              onClick={() => setType('deposit')}
+              isActive={type === 'deposit'}
+              activeColor="green"
+            >
               <img src={IncomeImg} alt="Entrada" />
               <span>Entrada</span>
-            </button>
+            </TypeRadioButton>
 
-            <button type="button">
+            <TypeRadioButton
+              type="button"
+              onClick={() => setType('withdraw')}
+              isActive={type === 'withdraw'}
+              activeColor="red"
+            >
               <img src={OutcomeImg} alt="Saída" />
               <span>Saída</span>
-            </button>
+            </TypeRadioButton>
           </TransactionTypesContainer>
           <input type="text" placeholder="Categoria" />
           <button type="submit">Cadastrar</button>

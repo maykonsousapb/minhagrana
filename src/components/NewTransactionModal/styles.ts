@@ -59,24 +59,37 @@ export const TransactionTypesContainer = styled.div`
   gap: 0.5rem;
   padding: 0.5rem 0;
   button {
-    height: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: solid 1px var(--input-border-color);
-    background: var(--input-background);
-    transition: filter 0.2s;
-    &:hover {
-      filter: brightness(0.9);
-    }
-    img {
-      width: 20px;
-      height: 20px;
-      margin-right: 1rem;
-    }
-    span {
-      font-weight: 600;
-      color: var(--font-dark);
-    }
+  }
+`;
+
+interface TypeRadioButtonProps {
+  isActive: boolean;
+  activeColor: 'red' | 'green';
+}
+
+const colors = {
+  green: '#c9fdd6',
+  red: '#ffc7c7',
+};
+
+export const TypeRadioButton = styled.button<TypeRadioButtonProps>`
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px var(--input-border-color);
+  background: ${props => (props.isActive ? colors[props.activeColor] : '#fff')};
+  transition: filter 0.2s;
+  &:hover {
+    filter: brightness(0.9);
+  }
+  img {
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+  }
+  span {
+    font-weight: 600;
+    color: var(--font-dark);
   }
 `;
