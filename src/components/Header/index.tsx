@@ -1,13 +1,14 @@
 import React from 'react';
 import { Container, Content } from './styles';
 import LogoImg from '../../assets/logo.svg';
+import { NewTransactionModal } from '../NewTransactionModal';
 
 export const Header = () => {
   return (
     <Container>
       <Content>
         <img src={LogoImg} alt="Minha Grana" />
-        <button type="button">Nova Transação</button>
+        <NewTransactionModal />
       </Content>
     </Container>
   );

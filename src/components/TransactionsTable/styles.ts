@@ -23,10 +23,10 @@ export const Container = styled.div`
       &:first-child {
         font-weight: 500;
       }
-      &.income {
+      &.deposit {
         color: var(--green);
       }
-      &.outcome {
+      &.withdraw {
         color: var(--red);
       }
     }
