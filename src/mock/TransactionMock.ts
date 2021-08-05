@@ -1,9 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import { createServer, Model } from 'miragejs';
-import { App } from './App';
 
-createServer({
+export const transactionMock = createServer({
   models: {
     transaction: Model,
   },
@@ -44,9 +41,3 @@ createServer({
     });
   },
 });
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
