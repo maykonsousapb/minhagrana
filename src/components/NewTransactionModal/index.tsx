@@ -9,7 +9,7 @@ import {
 import CloseImg from '../../assets/close.svg';
 import IncomeImg from '../../assets/income.svg';
 import OutcomeImg from '../../assets/outcome.svg';
-import { api } from '../../api/api';
+import { useTransaction } from '../../hooks/UseTransactions';
 
 interface formFieldProps {
   field: string;
@@ -26,6 +26,7 @@ const initialFormState = {
 export const NewTransactionModal = () => {
   const [open, setopen] = useState(false);
   const [form, setForm] = useState(initialFormState);
+  const { createTransaction } = useTransaction();
 
   const handleSetField = (
     field: formFieldProps['field'],
@@ -38,8 +39,9 @@ export const NewTransactionModal = () => {
   };
   const handleCreateNewtransaction = (event: FormEvent) => {
     event.preventDefault();
-    api.post('/transactions', form);
+    createTransaction(form);
     setForm(initialFormState);
+    setopen(false);
   };
   return (
     <>
