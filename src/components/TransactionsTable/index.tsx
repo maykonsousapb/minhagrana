@@ -1,10 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { api } from '../../api/api';
+import { formatDate } from '../../utils/formatDate';
+import { formatMoney } from '../../utils/formatMoney';
 import { Container } from './styles';
 
+interface TransactionProps {
+  id: number;
+  title: string;
+  type: string;
+  amount: number;
+  category: string;
+  createdAt: string;
+}
+
 export const TransactionsTable = () => {
+  const [transactions, setTransactions] = useState<TransactionProps[]>([]);
   useEffect(() => {
-    api.get('transactions').then(response => console.log(response.data));
+    api
+      .get('/transactions')
+      .then(response => setTransactions(response.data.transactions));
   }, []);
   return (
     <Container>
@@ -18,30 +32,17 @@ export const TransactionsTable = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Desenvolvimento de Website</td>
-            <td className="income">RS 5.000,00</td>
-            <td>Job</td>
-            <td>21/05/2021</td>
-          </tr>
-          <tr>
-            <td>Supermercado</td>
-            <td className="outcome">- RS 800,00</td>
-            <td>Despesas fixas</td>
-            <td>21/05/2021</td>
-          </tr>
-          <tr>
-            <td>Monitor</td>
-            <td className="outcome">- RS 1.300,00</td>
-            <td>Job</td>
-            <td>21/05/2021</td>
-          </tr>
-          <tr>
-            <td>Salário</td>
-            <td className="income">RS 6.000,00</td>
-            <td>Salário</td>
-            <td>30/05/2021</td>
-          </tr>
+          {Array.isArray(transactions) &&
+            transactions.map(transaction => (
+              <tr key={transaction.id}>
+                <td>{transaction.title}</td>
+                <td className={transaction.type}>
+                  {formatMoney(transaction.amount)}
+                </td>
+                <td>{transaction.category}</td>
+                <td>{formatDate(transaction.createdAt)}</td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </Container>
