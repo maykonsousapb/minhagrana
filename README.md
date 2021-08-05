@@ -1,46 +1,38 @@
-# Getting Started with Create React App
+<div align="center">
+  <img src="./src/assets/logo.svg" height="100px" alt="Next Controll"/>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+Trata-se de uma aplicação que simula o gerenciamento financeiro pessoal.
 
-In the project directory, you can run:
+![](https://img.shields.io/badge/autor-Maykon%20Sousa-brightgreen)
+![](https://img.shields.io/badge/Language-Typescript-brightgreen)
+![](https://img.shields.io/badge/Front--End-ReactJS-brightgreen)
 
-### `yarn start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Alguns recursos utilizados
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **MirageJS** — Lib para simular o backend de uma aplicação. Permite configurar banco de dados, rotas, chamadas API e seeds. Ideal para adiantar aplicações front-end quando o backend ainda não está pronto
+- **Context API** - Hook do React que nos permite compartilhar estados de forma global, deixando todas as informações disponíveis para ser acessada e atualizada em tempo real a partir de qualquer componente
+- **Styled-Components** — Lib para estilização no formato CSS in JS, que permite ja configurar componentes estilizados, formartar componenntes com base em estados e propriedades e ainda poder utilizar o encadeamento de estilos como nos pré-processadores
+- **Axios** - Biblioteca para gerenciar o acesso às rotas da API
 
-### `yarn test`
+## Iniciando
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone este reposítório usando `git clone https://github.com/maykonsousapb/minhagrana.git`
+2. acesse a pasta do projeto via terminal com o comando: `cd minhagrana`<br />
 
-### `yarn build`
+## Iniciando a plataforma Web
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Utilize o comando `yarn` ou `npm install` para instalar as dependências<br />
+3. Utilize o comando `yarn start` ou `npm run start` para iniciar a aplicação no seu navegador
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## CONTATOS
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+**website**:[http://maykonsousa.github.io](http://maykonsousa.github.io/)
+**LinkedIn**: [https://www.linkedin.com/in/maykonsousa](https://www.linkedin.com/in/maykonsousa/)
+**Whatsapp**: 61 992943297
